@@ -52,6 +52,16 @@ public class ProductStorageHibernateImpl implements ProductStorage {
     }
     @Override
     public List<Product> listProducts() {
-        return null;
+        Session session = getSessionFactory().openSession();
+        session.beginTransaction();
+        Query query = session.createQuery("from Product");
+        List<Product> list = (List<Product>)query.list();
+        session.getTransaction().commit();
+        session.close();
+        return list;
+    }
+
+    public void closeSession() {
+
     }
 }

@@ -1,0 +1,10 @@
+html, body, header, #intro {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#intro {
+    background: url("/resources/img/christmas_toys.jpg")no-repeat top left fixed;
+    background-size: cover;
+}

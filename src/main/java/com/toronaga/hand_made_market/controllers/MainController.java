@@ -19,6 +19,11 @@ public class MainController {
         this.service = service;
     }
 
+    @RequestMapping("/")
+    public String getMainPage() {
+        return "index";
+    }
+
     @RequestMapping("product/{id}")
     public String getProduct(@PathVariable("id") int id, Model model){
         model.addAttribute("product", this.service.getProductById(id));

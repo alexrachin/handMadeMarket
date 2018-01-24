@@ -9,7 +9,7 @@
 
     <properties>
         <java-version>1.8</java-version>
-        <org.springframework-version>4.0.3.RELEASE</org.springframework-version>
+        <org.springframework-version>4.0.4.RELEASE</org.springframework-version>
         <org.aspectj-version>1.7.4</org.aspectj-version>
         <org.slf4j-version>1.7.5</org.slf4j-version>
         <hibernate.version>4.3.5.Final</hibernate.version>
@@ -166,8 +166,8 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.9</source>
+                    <target>1.9</target>
                 </configuration>
             </plugin>
         </plugins>
