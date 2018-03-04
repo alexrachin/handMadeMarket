@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class MainController {
@@ -19,15 +20,17 @@ public class MainController {
         this.service = service;
     }
 
-    @RequestMapping("/")
-    public String getMainPage() {
-        return "index";
+    @RequestMapping(value = "product", method = RequestMethod.GET)
+    public String getMainPage(Model model) {
+        model.addAttribute("product", new Product());
+        model.addAttribute("listProducts", service.getListProducts());
+        return "products";
     }
 
-    @RequestMapping("product/{id}")
+    @RequestMapping(value = "product/{id}", method = RequestMethod.GET)
     public String getProduct(@PathVariable("id") int id, Model model){
         model.addAttribute("product", this.service.getProductById(id));
-        return "index";
+        return "products";
     }
 
     @RequestMapping("product/add")

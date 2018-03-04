@@ -1,3 +1,4 @@
-/.idea
-/HandMadeMarket.iml
-/target
+.idea/
+HandMadeMarket.iml
+target/
+out/
